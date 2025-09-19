@@ -1,5 +1,5 @@
 # app.py
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify,render_template
 import joblib
 import pandas as pd
 import numpy as np
@@ -13,7 +13,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "API de classification de texte est opérationnelle !"
+    return render_template("index.html")
 
 @app.route("/predict", methods=["POST"])
 def predict():
@@ -67,4 +67,4 @@ def predict_batch():
     return jsonify(response)
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run(host="0.0.0.0", port=8000)

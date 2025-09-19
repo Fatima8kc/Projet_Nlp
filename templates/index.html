@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Classification de texte</title>
+    <script>
+        async function predictText(event) {
+            event.preventDefault();
+            const text = document.getElementById("text").value;
+            const resultDiv = document.getElementById("result");
+
+            if (!text.trim()) {
+                resultDiv.innerHTML = "<p style='color:red'>Veuillez entrer un texte.</p>";
+                return;
+            }
+
+            try {
+                const response = await fetch("/predict", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ text: text })
+                });
+
+                if (!response.ok) {
+                    throw new Error("Erreur serveur: " + response.status);
+                }
+
+                const data = await response.json();
+                
+                let html = `<p><b>Classe prédite :</b> ${data.predicted_label}</p>`;
+                
+                if (data.probabilities) {
+                    html += "<p><b>Probabilités :</b></p><ul>";
+                    for (const [cls, prob] of Object.entries(data.probabilities)) {
+                        html += `<li>${cls} : ${(prob*100).toFixed(2)}%</li>`;
+                    }
+                    html += "</ul>";
+                }
+
+                resultDiv.innerHTML = html;
+            } catch (error) {
+                resultDiv.innerHTML = `<p style='color:red'>Erreur: ${error.message}</p>`;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Tester la classification</h2>
+    <form onsubmit="predictText(event)">
+        <label for="text">Votre texte :</label><br>
+        <textarea id="text" name="text" rows="4" cols="50"></textarea><br><br>
+        <button type="submit">Prédire</button>
+    </form>
+    <div id="result" style="margin-top:20px;"></div>
+</body>
+</html>
