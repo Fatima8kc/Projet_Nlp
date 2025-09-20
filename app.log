@@ -6,3 +6,11 @@
 2025-09-19 19:25:23,001 [INFO] [33mPress CTRL+C to quit[0m
 2025-09-19 19:25:34,872 [INFO] Page d'accueil demandée
 2025-09-19 19:25:34,910 [INFO] 192.168.1.18 - - [19/Sep/2025 19:25:34] "GET / HTTP/1.1" 200 -
+2025-09-20 00:27:49,458 [INFO] Démarrage de l'application Flask sur 0.0.0.0:8000
+2025-09-20 00:27:49,499 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.18:8000
+2025-09-20 00:27:49,509 [INFO] [33mPress CTRL+C to quit[0m
+2025-09-20 00:27:59,538 [INFO] Page d'accueil demandée
+2025-09-20 00:27:59,553 [INFO] 192.168.1.18 - - [20/Sep/2025 00:27:59] "GET / HTTP/1.1" 200 -
