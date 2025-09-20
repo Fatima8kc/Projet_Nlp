@@ -77,5 +77,5 @@ def predict_batch():
     return jsonify(response)
 
 if __name__ == "__main__":
-    logging.info("Démarrage de l'application Flask sur 0.0.0.0:8000")
+    logging.info("Démarrage de l'application Flask sur 0.0.0.0:8082")
     app.run(host="0.0.0.0", port=8082)
