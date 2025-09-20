@@ -14,3 +14,12 @@
 2025-09-20 00:27:49,509 [INFO] [33mPress CTRL+C to quit[0m
 2025-09-20 00:27:59,538 [INFO] Page d'accueil demandée
 2025-09-20 00:27:59,553 [INFO] 192.168.1.18 - - [20/Sep/2025 00:27:59] "GET / HTTP/1.1" 200 -
+2025-09-20 02:20:35,998 [INFO] Démarrage de l'application Flask sur 0.0.0.0:8000
+2025-09-20 02:20:36,133 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8082
+ * Running on http://192.168.1.18:8082
+2025-09-20 02:20:36,133 [INFO] [33mPress CTRL+C to quit[0m
+2025-09-20 02:20:47,930 [INFO] Page d'accueil demandée
+2025-09-20 02:20:47,959 [INFO] 192.168.1.18 - - [20/Sep/2025 02:20:47] "GET / HTTP/1.1" 200 -
+2025-09-20 02:20:48,325 [INFO] 192.168.1.18 - - [20/Sep/2025 02:20:48] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
